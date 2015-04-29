@@ -53,6 +53,7 @@ module Librarian
             end
             print_verbose "\n\n#{repo[:name]} -- git fetch origin && git checkout #{checkout_ref}"
             git_pull_cmd = system_cmd("git fetch origin && git checkout #{checkout_ref}")
+            git_submodule_updates = system_cmd("git submodule update --init --recursive")
           end
         end
       end

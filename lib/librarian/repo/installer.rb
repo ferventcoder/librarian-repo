@@ -50,7 +50,7 @@ module Librarian
 
         Dir.chdir(module_path) do
           print_verbose "cloning #{repo}"
-          system_cmd("git clone #{repo} #{module_name}")
+          system_cmd("git clone --recursive #{repo} #{module_name}")
           Dir.chdir(module_dir) do
             system_cmd('git branch -r')
             system_cmd("git checkout #{ref}") if ref
